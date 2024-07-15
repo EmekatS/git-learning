@@ -7,7 +7,22 @@
 body{
     font-family: "poppins";
 }
+.container{
+    text-align: center;
+    margin: 40px auto;
+}
 h1{
     color: aqua;
     font-size: 25px;
+}
+p{
+    color: slateblue;
+    font-size: 20px;
+}
+button{
+    padding: 10px;
+    background-color: aqua;
+    color: white;
+    border: none;
+    border-radius: 10px;
 }
