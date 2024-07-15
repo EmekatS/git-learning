@@ -1,44 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-}
-body{
-    font-family: "poppins";
-    margin: 0%;
-    padding: 0%;
-}
-section{
-    width: 100%;
-    max-height: 100vh;
-    /* background-color: black; */
-}
-.container{
-    text-align: center;
-    /* margin: 40px auto; */
-}
-h1{
-    color: aqua;
-    font-size: 25px;
-}
-p{
-    color: slateblue;
-    font-size: 20px;
-}
-button{
-    padding: 10px;
-    background-color: aqua;
-    color: white;
-    border: none;
-    border-radius: 10px;
-}
-.image-wrapper{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-img{
-    width: 300px;
-    height: 300px;
-}
+*,
+        *::after,
+        *::before{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        body, input{
+            font-family: "poppins";
+            
+        }
+        main{
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+            background-color: brown;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            transition: .8s ease-in-out;
+        }
+        .box{
+            position: relative;
+            width: 100%;
+            margin: 5px auto;
+            max-width: 1020px;
+            height: 560px;
+            background-color: whitesmoke;
+            border-radius: 3.3rem;
+            box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+        }
+        .inner-box{
+            position: absolute;
+            width: calc(100% - 4.1rem);
+            height: calc(100% - 4.1rem);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .content-wrap{
+            position: absolute;
+            height: 100%;
+            width: 45%;
+            top: 0%;
+            left: 0%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-column: 1/2;
+            grid-row: 1/2;
+            transition: .8s ease-in-out;
+        }
+        .carousel{
+            position: absolute;
+            height: 100%;
+            width: 55%;
+            left: 45%;
+            top: 0%;
+            background-color: bisque;
+            border-radius: 2rem;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            padding-bottom: 2rem;
+            background-image: url(./images/andrey-haimin-qtwlKiu6VHg-unsplash-removebg-preview.png);
+            background-size: cover;
+            background-position: center;
+            transition: .8s ease-in-out;
+        }
+        .wrapper{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+        .image{
+            width: 100%;
+            grid-column: 1/2;
+            grid-row: 1/2;
+            opacity: 0;
+            border-radius: 2rem;
+        }
+        .image.show{
+            opacity: 1;
+        }
+        content{
+            max-width: 260px;
+            width: 100%;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            grid-column: 1/2;
+            grid-row: 1/2;
+            transition: opacity .02s .4s;
+        }
+        content.tuesday{
+            opacity: 0;
+            pointer-events: none;
+        }
+        .toggle{
+            color: black;
+            padding: 15px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 1.4rem;
+            border: 1px solid black;
+            text-align: center;
+            align-items: center;
+            width: 60%;
+            font-weight: 500;
+            transition: all .5s;
+        }
+        .toggle:hover{
+            color: white;
+            background-color: brown;
+        }
+        main.switch .content-wrap{
+            left: 55%;
+        }
+        main.switch .carousel{
+            left: 0%;
+            background-image: url(./images/matheus-cenali-wXuzS9xR49M-unsplash.jpg);
+        }
+        main.switch content.monday{
+            opacity: 0;
+            pointer-events: none;
+        }
+        main.switch content.tuesday{
+            opacity: 1;
+            pointer-events: all;
+        }
+        main.switch{
+            background-color: rebeccapurple;
+        }

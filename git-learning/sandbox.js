@@ -1,6 +1,8 @@
-function ChangeBgColor(color){
-    const sec = document.querySelector('.sec');
-    sec.style.background = color;
-}
+const toggle_btn = document.querySelectorAll(".toggle");
+        const main = document.querySelector("main");
 
-
+        toggle_btn.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                main.classList.toggle("switch");
+            });
+        });
